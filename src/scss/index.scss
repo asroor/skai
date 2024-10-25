@@ -18,7 +18,8 @@ Primary user: smmstay
 /* ==================================
 	Font
 /* =================================*/
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import 'fonts';
 /* ==================================
 	Common styles
 /* =================================*/
@@ -31,6 +32,8 @@ Primary user: smmstay
 	--white: #FFF;
 	--light-gray: #545969;
 	--SourceSans3: 'Source Sans 3', sans-serif;
+	--proximaNova: 'Proxima Nova', sans-serif;
+	--manrope: 'Manrope', sans-serif;
 }
 
 * {
@@ -64,6 +67,7 @@ body {
 	letter-spacing: normal;
 	-webkit-font-smoothing: antialiased;
 	background-color: rgba(255, 255, 255, 1);
+	overflow-x: hidden;
 }
 
 a,
@@ -72,7 +76,7 @@ button {
 }
 
 .wrapper {
-	background: url('../images/home-page.webp') no-repeat;
+	background: url('../images/home-page.svg') no-repeat;
 	background-position: top center;
 	background-size: cover;
 	overflow: hidden;
@@ -336,10 +340,214 @@ header {
 ===================*/
 
 #level {
-	padding-top: 182px;
+	padding-top: 382px;
 }
+
 .level-wrapper {
 	width: 100%;
 	max-width: 882px;
 	margin-left: auto;
+}
+
+.level-series {
+	display: flex;
+	align-items: center;
+	column-gap: 20px;
+
+	.level-series__img {
+		flex-shrink: 0;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 32px;
+	}
+}
+
+.level-series__about {
+	.title-block {
+		position: relative;
+
+		h1 {
+			font-family: var(--ProximaNova);
+			font-size: 148px;
+			font-weight: 800;
+			opacity: 0.4;
+			background: linear-gradient(90deg, #BEDCFF 0%, #E5F5FF 100%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			line-height: 1;
+		}
+
+		h2 {
+			font-family: var(--ProximaNova);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			color: var(--black);
+			font-size: 84px;
+			font-weight: 800;
+			line-height: 68px;
+		}
+	}
+
+	h3 {
+		color: var(--black);
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 26px;
+		letter-spacing: 0.36px;
+		margin-bottom: 13px;
+	}
+
+	p {
+		color: var(--light-gray);
+		font-family: var(--manrope);
+		font-size: 19px;
+		font-weight: 600;
+	}
+}
+
+/*==================
+	Vakansi
+==================*/
+#vacancies {
+	padding-top: 96px;
+	margin-top: 142px;
+}
+
+.vacanci-tabs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 16px;
+	margin-bottom: 50px;
+
+	.tab-btn {
+		padding: 12px 24px;
+		line-height: 1;
+		border-radius: 50px;
+		border: 1px solid var(--black);
+		background-color: transparent;
+		color: var(--black);
+		font-size: 20px;
+		font-weight: 600;
+
+		&.active {
+			color: var(--white);
+			background-color: var(--black);
+		}
+	}
+}
+
+
+.vacanci-card {
+	padding: 32px;
+	width: 100%;
+	min-height: 422px;
+	max-width: 361px;
+	border-radius: 30px;
+	background-color: var(--white);
+	box-shadow: 0px 4px 20.1px 0px #D2E1F6;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: column;
+
+	.opt {
+		width: fit-content;
+		line-height: 1;
+		padding: 10px 14px;
+		border-radius: 17px;
+		background: linear-gradient(90deg, #BEDCFF 0%, #E5F5FF 100%);
+		color: var(--blue);
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	h1 {
+		margin-top: 30px;
+		margin-bottom: 15px;
+		color: #236BD7;
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 26px;
+		letter-spacing: 0.36px;
+	}
+
+	h3 {
+		color: var(--black);
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: 0.18px;
+	}
+
+	.vacanci-card__btn {
+		padding: 12px 24px;
+	}
+}
+
+.vacanci-container {
+	min-height: 430px;
+	position: relative;
+	display: none;
+
+	.vacanci-title {
+		color: var(--black);
+		font-size: 22px;
+		font-weight: 700;
+		line-height: 26px;
+		letter-spacing: 0.33px;
+		margin-bottom: 20px;
+	}
+
+	.md-block {
+		display: none;
+	}
+
+	&.active {
+		display: block;
+	}
+}
+
+
+.vacanciSlide {
+	overflow: visible;
+	max-width: 1920px;
+	margin: 0 auto;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0 190px;
+}
+
+/*======================
+	contact
+======================*/
+
+
+#contact {
+	padding-top: 100px;
+}
+
+.contact-wrapper {
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 60px;
+	border-radius: 30px;
+	background-color: var(--white);
+	box-shadow: 0px 4px 20.1px 0px #D2E1F6;
+
+	.title {
+		margin-top: 42px;
+	}
+}
+
+.contact-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 20px;
 }

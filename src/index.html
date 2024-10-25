@@ -20,7 +20,7 @@
 						<img src="images/logo.svg" alt="">
 					</a>
 					<ul class="nav-links">
-						<li class="nav-links__item"><a href="#">У нас хорошо, потому что</a></li>
+						<li class="nav-links__item"><a href="#good-doing">У нас хорошо, потому что</a></li>
 						<li class="nav-links__item"><a href="#">Наши ценности</a></li>
 						<li class="nav-links__item"><a href="#">Компания в цифрах </a></li>
 						<li class="nav-links__item"><a href="#">Открытые вакансии </a></li>
@@ -55,27 +55,137 @@
 		<!-- Home end -->
 
 		<!-- grid-cards start -->
-		<div class="grid-cards">
+		<section id="good-doing">
 			<div class="container">
-				<div class="swiper mySwiper">
+				<h1 class="title">У нас хорошо, потому что:</h1>
+				<div class="swiper gridCards">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide"></div>
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Заботимся о наших сотрудниках</h3>
 								<img src="images/grid-card1.webp" alt="card img" width="189" height="190">
 							</div>
 						</div>
+						<div class="swiper-slide">
+							<div class="grid-card">
+								<h3>Создаем безопасность и стабильность</h3>
+								<img src="images/grid-card2.webp" alt="card img" width="189" height="190">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="grid-card">
+								<h3>Поддерживаем желание развиваться</h3>
+								<img src="images/grid-card3.webp" alt="card img" width="189" height="190">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="grid-card">
+								<h3>Хорошо проводим время вместе </h3>
+								<img src="images/grid-card4.webp" alt="card img" width="189" height="190">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="grid-card">
+								<h3>Выплаты в случае важных событий</h3>
+								<img src="images/grid-card5.webp" alt="card img" width="189" height="190">
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="grid-card">
+								<h3>Программа признания сотрудников</h3>
+								<img src="images/grid-card6.webp" alt="card img" width="189" height="190">
+							</div>
+						</div>
 					</div>
 				</div>
-
 			</div>
-		</div>
+		</section>
 		<!-- grid-cards end -->
+
+		<!-- values start -->
+		<section id="values">
+			<div class="container">
+				<h1 class="title">Наши ценности</h1>
+				<div class="values-wrapper">
+					<div class="row">
+						<div class="col">
+							<div class="values-card">
+								<div class="card-num">
+									<h1>1</h1>
+								</div>
+								<h2>Будь экспертом в своём деле </h2>
+								<h3>Экспертность – это умение глубоко погрузиться в задачу клиента и найти оптимальное решение. Это
+									гарантия качества </h3>
+							</div>
+						</div>
+						<div class="col">
+							<div class="values-card">
+								<div class="card-num">
+									<h1>2</h1>
+								</div>
+								<h2>Прокачай свои навыки </h2>
+								<h3>Обучение и саморазвитие – наши верные помощники в реализации самых смелых планов</h3>
+							</div>
+						</div>
+						<div class="col">
+							<div class="values-card">
+								<div class="card-num">
+									<h1>3</h1>
+								</div>
+								<h2>Замечая, улучшай</h2>
+								<h3>Мы всегда открыты для конструктивных инициатив и предлагаем, как можно изменить или улучшить</h3>
+							</div>
+						</div>
+						<div class="col">
+							<div class="values-card">
+								<div class="card-num">
+									<h1>1</h1>
+								</div>
+								<h2>Успех - командная победа </h2>
+								<h3>В SKAI важен вклад каждого участника команды в общий успех. Объединяем усилия в достижении общей
+									цели</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- values end -->
+
+		<!-- level start -->
+		<section id="level">
+			<div class="container">
+				<h1 class="title">Мы сформировали команду, которая дает результат и выводит компанию на новый уровень </h1>
+				<div class="level-wrapper">
+					<div class="level-series">
+						<img src="" alt="" class="level-series__img">
+						<div class="level-series__about">
+							<div class="title-block">
+								<h1>270+</h1>
+								<h2>270+</h2>
+							</div>
+							<h3>Высококлассных специалистов</h3>
+							<p>У нас работают настоящие профессионалы своего дела: инженер-программисты, аналитики, менеджеры по
+								продажам, бухгалтеры, специалисты по ТП и многие другие </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- level end -->
 
 		<!-- scripts -->
 		<script src="lib/swiper.min.js"></script>
 		<script src="js/main.min.js"></script>
+		<script>
+			var swiper = new Swiper(".gridCards", {
+				slidesPerView: 3,
+				grid: {
+					rows: 2,
+					fill: 'row'
+				},
+			});
+		</script>
 	</div>
 </body>
 

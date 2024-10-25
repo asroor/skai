@@ -106,6 +106,9 @@ button {
   font-weight: 800;
   line-height: 40px;
   letter-spacing: 0.32px;
+  margin: 0 auto;
+  margin-bottom: 54px;
+  max-width: 837px;
 }
 
 /* ==================================
@@ -162,6 +165,10 @@ header {
 /* ==========================
   Home
 /* ==========================*/
+#home {
+  padding-bottom: 50px;
+}
+
 .home-about {
   width: 100%;
   max-width: 886px;
@@ -207,5 +214,108 @@ header {
 .home-right .home-right__detal2 {
   top: 200px;
   right: -50px;
+}
+
+/* ==========================
+	good-doing
+========================== */
+#good-doing {
+  padding: 100px;
+}
+
+.gridCards {
+  width: 100%;
+  max-width: 1308px;
+  margin: 0 auto;
+}
+.gridCards .swiper-slide {
+  padding: 15px;
+}
+.gridCards .grid-card {
+  background-color: var(--white);
+  padding: 35px 40px 35px 40px;
+  width: 100%;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0px 4px 20.1px 0px #D2E1F6;
+}
+.gridCards .grid-card h3 {
+  color: var(--Black, #1B181B);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.36px;
+  margin-bottom: 20px;
+}
+.gridCards .grid-card img {
+  margin: 0 auto;
+}
+
+/* ==========================
+	values
+========================== */
+#values {
+  padding-top: 100px;
+}
+
+.values-wrapper .row {
+  display: flex;
+}
+.values-wrapper .row .col {
+  width: 100%;
+  max-width: 25%;
+  padding: 16px;
+}
+
+.values-card {
+  padding: 36px 16px;
+  border-radius: 30px;
+  background: linear-gradient(0deg, #B2CFFB 0%, #E5F5FF 35.97%, #E5F5FF 74.14%, #FFF 98.86%);
+  min-height: 350px;
+  text-align: center;
+}
+.values-card .card-num {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black);
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.values-card .card-num h1 {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: 800;
+}
+.values-card h2 {
+  color: var(--black);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.36px;
+  margin-top: 28px;
+  margin-bottom: 16px;
+}
+.values-card h3 {
+  color: var(--light-gray);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.18px;
+}
+
+/*===================
+	level
+===================*/
+#level {
+  padding-top: 182px;
+}
+
+.level-wrapper {
+  width: 100%;
+  max-width: 882px;
+  margin-left: auto;
 }
 /*# sourceMappingURL=main.min.css.map */

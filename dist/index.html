@@ -55,6 +55,9 @@
 							class="home-right__detal1">
 						<img src="images/home.webp" alt="home img" class="home-img" width="625" height="780">
 						<img src="images/home-img-detal2.svg" alt="arrow" width="208" height="114" class="home-right__detal2">
+						<a href="" class="btn home-right-btn"><span>Открытые вакансии</span>
+							<img src="images/arrow-deg.svg" alt="arrow">
+						</a>
 					</div>
 				</div>
 			</div>
@@ -63,8 +66,8 @@
 
 		<!-- grid-cards start -->
 		<section id="good-doing">
-			<div class="container">
-				<h1 class="title">У нас хорошо, потому что:</h1>
+			<h1 class="title">У нас хорошо, потому что:</h1>
+			<div class="grid-cards-container">
 				<div class="swiper gridCards">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
@@ -102,7 +105,8 @@
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Выплаты в случае важных событий</h3>
-								<p>Поддерживаем сотрудников в значимых моментах их жизни. Поздравляем с рождением детей и свадьбой.</p>
+								<p>Поддерживаем сотрудников в значимых моментах их жизни. Поздравляем с рождением детей и свадьбой.
+								</p>
 								<img src="images/grid-card5.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
@@ -864,15 +868,45 @@
 		<script>
 			var swiper = new Swiper(".gridCards", {
 				slidesPerView: 3,
-				grap: true,
-				grid: {
-					rows: 2,
-					fill: 'row'
-				},
-
+				breakpoints: {
+					100: {
+						slidesPerView: 2.1,
+					},
+					769: {
+						slidesPerView: 2,
+						grid: {
+							rows: 3,
+							fill: 'row'
+						}
+					},
+					1301: {
+						slidesPerView: 3,
+						grid: {
+							rows: 2,
+							fill: 'row'
+						}
+					}
+				}
 			});
 			var vacanciSlide = new Swiper(".vacanciSlide", {
 				slidesPerView: 3.9,
+				breakpoints: {
+					100: {
+						slidesPerView: 2.2,
+					},
+					769: {
+						slidesPerView: 2.3,
+					},
+					993: {
+						slidesPerView: 2.7,
+					},
+					1301: {
+						slidesPerView: 3.2,
+					},
+					1640: {
+						slidesPerView: 3,
+					}
+				}
 			});
 		</script>
 	</div>

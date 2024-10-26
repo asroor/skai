@@ -295,7 +295,7 @@ header {
 		}
 
 		p {
-			display: none;
+			opacity: 0;
 			color: var(--light-gray);
 			text-align: center;
 			font-size: 18px;
@@ -324,7 +324,6 @@ header {
 			}
 
 			p {
-				display: block;
 				opacity: 1;
 			}
 		}
@@ -621,7 +620,7 @@ header {
 	margin-bottom: 184px;
 
 	.title {
-		margin-top: 42px;
+		margin-bottom: 42px;
 	}
 }
 
@@ -696,6 +695,7 @@ header {
 
 .upload-file {
 	flex-shrink: 0;
+
 	label {
 		display: flex;
 		align-items: center;
@@ -992,10 +992,357 @@ footer {
 
 /*====================
 	responsive
-=====================*/ 
+=====================*/
 
 @media (max-width: 1640px) {
 	.container {
 		width: 1240px;
+	}
+
+	.vacanciSlide {
+		max-width: 1640px;
+		padding: 0 200px;
+	}
+
+	.address-map {
+		width: 577px;
+		height: 568px;
+	}
+
+	.home-right {
+		transform: translate(0);
+	}
+
+	.home-about h1 {
+		font-size: 45px;
+		line-height: 1.1;
+	}
+}
+
+
+@media (max-width: 1300px) {
+	.container {
+		width: 930px;
+	}
+
+	.nav-links {
+		display: none;
+	}
+
+	.home-right .home-img {
+		width: 550px;
+		height: fit-content;
+	}
+
+	.home-about {
+		width: 520px;
+		max-width: auto;
+		flex-shrink: 0;
+	}
+
+	.home-right .home-right__detal2 {
+		width: 100px;
+		height: auto;
+		right: 50px;
+	}
+
+	.home-right .home-right__detal1 {
+		width: 150px;
+		height: fit-content;
+		bottom: 110px;
+		left: 80px;
+	}
+
+	.home-right {
+		transform: translateY(-90px);
+	}
+
+	.values-wrapper .row {
+		flex-wrap: wrap;
+	}
+
+	.values-wrapper .row .col {
+		max-width: calc(100% / 2);
+	}
+
+	.home-about .home-btn {
+		margin-top: 70px;
+	}
+
+	.level-wrapper {
+		max-width: 100%;
+	}
+
+	.address-item .item-main h1 {
+		white-space: normal;
+		font-size: 45px;
+	}
+
+	.address-map {
+		width: 345px;
+		height: 444px;
+	}
+
+	.address-item {
+		padding: 30px 0;
+	}
+
+	.address-network {
+		margin-top: 50px;
+	}
+
+	.contact-left .series label {
+		line-height: 1.1;
+		margin-bottom: 5px;
+	}
+
+	.vacanciSlide {
+		max-width: 1300px;
+		padding: 0 190px;
+	}
+
+	.vacanci-card {
+		max-width: 310px;
+	}
+}
+
+@media (max-width: 992px) {
+	.container {
+		width: 750px;
+	}
+
+	.home-about h1 {
+		font-size: 40px;
+	}
+
+	.home-about {
+		width: 340px;
+	}
+
+	.home-right {
+		transform: translate(-40px, -60px);
+	}
+
+	.contact-flex {
+		.contact-img {
+			flex-shrink: 0;
+			width: 40%;
+		}
+	}
+
+	.sure label {
+		line-height: 1.1;
+	}
+
+	.contact-info {
+		column-gap: 20px;
+	}
+
+	.address-item .item-main h1 {
+		font-size: 40px;
+	}
+
+	.vacanciSlide {
+		max-width: 992px;
+		padding: 0 120px;
+	}
+
+	.vacanci-tabs {
+		max-width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.vacanci-tabs .tab-btn {
+		font-size: 16px;
+	}
+}
+
+@media (max-width:790px) {
+	.container {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.home-right .home-img {
+		width: 100%;
+		flex-shrink: inherit;
+	}
+
+	.home-wrapper {
+		flex-direction: column;
+		margin-top: 70px;
+	}
+
+	.home-about {
+		width: 100%;
+		flex-shrink: inherit;
+		position: relative;
+		z-index: 1;
+	}
+
+	.home-right {
+		transform: translate(0);
+		margin-top: -100px;
+	}
+
+	.home-about .home-btn {
+		display: none;
+	}
+
+	.wrapper {
+		background-image: url('../images/mobile-page-bg.svg');
+	}
+
+	.home-right .home-right__detal2 {
+		width: 180px;
+		top: 190px;
+		right: 70px;
+		transform: rotate(-35deg);
+	}
+
+	.home-right .home-right__detal1 {
+		width: 270px;
+		bottom: 220px;
+		left: 30px;
+		transform: rotate(-7deg);
+	}
+}
+
+@media (max-width: 768px) {
+	.level-series .level-series__img {
+		width: 114.695px;
+		height: auto;
+	}
+
+	.level-series__about .title-block h1 {
+		font-size: 78px;
+	}
+
+	.level-series__about .title-block h2 {
+		font-size: 44px;
+		line-height: 100%;
+	}
+
+	.level-series__about p {
+		font-size: 18px;
+	}
+
+	.vacanciSlide {
+		padding: 0 20px;
+		max-width: 100%;
+	}
+
+	.vacanci-tabs {
+		display: none;
+	}
+
+	.vacanci-container {
+		opacity: 1;
+		display: block;
+		min-height: 550px;
+		padding: 0 20px;
+	}
+
+	.vacanci-container .vacanci-title {
+		display: block;
+	}
+
+	.contact-flex {
+		flex-direction: column;
+	}
+
+	.contact-left {
+		max-width: 100%;
+		margin-bottom: 42px;
+	}
+
+	.contact-flex .contact-img {
+		width: 320px;
+		flex-shrink: inherit;
+	}
+
+	.contact-info {
+		flex-direction: column;
+	}
+
+	.address-map {
+		width: 100%;
+		flex-shrink: inherit;
+	}
+
+	.address-item .item-main h1 {
+		font-size: 52px;
+	}
+
+	.address-item .item-main h2 {
+		font-size: 38px;
+	}
+
+	.address-item .item-main h3 {
+		font-size: 24px;
+	}
+
+	.address-network {
+		display: none;
+	}
+
+	.address {
+		margin-bottom: 50px;
+	}
+
+	.grid-cards-container {
+		position: relative;
+		height: 506px;
+
+		.gridCards {
+			position: absolute;
+			overflow: visible;
+		}
+	}
+
+	.gridCards .grid-card h3 {
+		font-size: 22px;
+		margin-bottom: 24px;
+	}
+
+	.gridCards .grid-card p {
+		opacity: 1;
+		font-size: 16px;
+	}
+
+	.gridCards .grid-card img {
+		position: static;
+		transform: translate(0);
+	}
+
+	.gridCards {
+		width: 100%;
+
+		.swiper-slide {
+			min-width: 360px !important;
+		}
+	}
+
+	.gridCards .grid-card {
+		width: 330px;
+		min-height: 506px;
+
+		img {
+			margin-top: 10px;
+			width: 192px;
+			height: auto;
+		}
+
+		padding: 32px 20px;
+
+		&:hover {
+			background: var(--white);
+
+			img {
+				width: 192px;
+				height: auto;
+			}
+		}
 	}
 }

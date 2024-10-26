@@ -33,6 +33,9 @@
 						<li class="nav-links__item"><a href="#">Открытые вакансии </a></li>
 						<li class="nav-links__item"><a href="#">Контакты </a></li>
 					</ul>
+					<button class="bars" type="button">
+						<img src="images/bars.svg" alt="bars" width="28.002" height="19.998">
+					</button>
 				</div>
 			</div>
 		</header>
@@ -902,19 +905,31 @@
 				}
 			});
 			var vacanciSlide = new Swiper(".vacanciSlide", {
-				slidesPerView: 3.9,
 				breakpoints: {
 					100: {
-						slidesPerView: 2.2,
+						slidesPerView: 1,
 					},
-					769: {
-						slidesPerView: 2.3,
+					401: {
+						slidesPerView: 1.1,
+					},
+					451: {
+						slidesPerView: 1.25,
+					},
+					531: {
+						slidesPerView: 1.5,
+					},
+					601: {
+						slidesPerView: 1.7,
+					},
+					751: {
+						slidesPerView: 2.2,
 					},
 					993: {
 						slidesPerView: 2.7,
 					},
 					1301: {
 						slidesPerView: 3.2,
+						spaceBetween: 40,
 					},
 					1640: {
 						slidesPerView: 3.9,

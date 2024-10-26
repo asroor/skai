@@ -117,9 +117,11 @@ button {
 		background-color: var(--blue);
 	}
 }
+
 .home-right-btn {
 	display: none;
 }
+
 .title {
 	color: var(--black);
 	text-align: center;
@@ -132,6 +134,7 @@ button {
 	max-width: 837px;
 }
 
+
 /* ==================================
   Header
 /* =================================*/
@@ -143,6 +146,14 @@ header {
 	left: auto;
 	right: auto;
 	z-index: 2;
+}
+
+.bars {
+	display: flex;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+	display: none;
 }
 
 .header-wrapper {
@@ -1030,8 +1041,11 @@ footer {
 
 
 @media (max-width: 1300px) {
-	.container {
+
+	.container,
+	.grid-cards-container {
 		width: 930px;
+		margin: 0 auto;
 	}
 
 	.nav-links {
@@ -1108,15 +1122,24 @@ footer {
 	.vacanciSlide {
 		max-width: 1300px;
 		padding: 0 190px;
+		margin: 0 -10px;
+		.swiper-slide {
+			padding: 10px;
+		}
 	}
 
 	.vacanci-card {
-		max-width: 310px;
+		min-width: 310px;
 	}
 }
 
 @media (max-width: 992px) {
-	.container {
+	.footer-links {
+		column-gap: 20px;
+	}
+
+	.container,
+	.grid-cards-container {
 		width: 750px;
 	}
 
@@ -1169,6 +1192,11 @@ footer {
 
 @media (max-width:790px) {
 	.container {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.vacanciSlide {
 		width: 100%;
 		padding: 0 20px;
 	}

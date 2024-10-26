@@ -405,6 +405,10 @@ button {
   background-color: var(--blue);
 }
 
+.home-right-btn {
+  display: none;
+}
+
 .title {
   color: var(--black);
   text-align: center;
@@ -606,9 +610,15 @@ header {
   padding: 16px;
 }
 
-.values-card {
-  padding: 36px 16px;
+.values-card-border {
+  padding: 4px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%), linear-gradient(0deg, #B2CFFB 0%, #E6F5FF 35.97%, #E6F5FF 74.14%, #FFFFFF 98.86%);
   border-radius: 30px;
+}
+
+.values-card {
+  border-radius: 28px;
+  padding: 36px 16px;
   background: linear-gradient(0deg, #B2CFFB 0%, #E5F5FF 35.97%, #E5F5FF 74.14%, #FFF 98.86%);
   min-height: 350px;
   text-align: center;
@@ -831,7 +841,7 @@ header {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  padding: 0 190px;
+  padding: 0 174px;
 }
 
 /*======================
@@ -1060,8 +1070,9 @@ header {
   height: 588px;
   flex-shrink: 0;
   border-radius: 30px;
-  background-color: red;
+  background-color: var(--white);
   box-shadow: 0px 4px 20.1px 0px #D2E1F6;
+  padding: 20px;
 }
 
 .address-item {

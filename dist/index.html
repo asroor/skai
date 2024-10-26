@@ -70,36 +70,47 @@
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Заботимся о наших сотрудниках</h3>
+								<p>ДМС, страховка для путешествий по всему миру. По будням в онлайн формате занятия йогой
+									с профессиональным тренером. Гибкий график работы, гибридный или удаленный формат работы</p>
 								<img src="images/grid-card1.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Создаем безопасность и стабильность</h3>
+								<p>У нас официальное оформление и IT — аккредитация компании. Ежегодные отпуска, больничные, премии
+									(бонусы) и Performance Review.</p>
 								<img src="images/grid-card2.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Поддерживаем желание развиваться</h3>
+								<p>Карьерный и профессиональный рост. Обучение/тренинги/вебинары за счет компании. Обмен
+									профессиональным опытом, открытость и партнерство.</p>
 								<img src="images/grid-card3.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Хорошо проводим время вместе </h3>
+								<p>2 раза в год проводим корпоративы: зимний и летний. Играем в Мафию и настолки. Встречаемся в барах
+									или на квизах, чтобы провести совместно время в неформальной обстановке.</p>
 								<img src="images/grid-card4.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Выплаты в случае важных событий</h3>
+								<p>Поддерживаем сотрудников в значимых моментах их жизни. Поздравляем с рождением детей и свадьбой.</p>
 								<img src="images/grid-card5.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="grid-card">
 								<h3>Программа признания сотрудников</h3>
+								<p>Возможность благодарить коллег за вклад в общее дело через внутреннюю платформу, поощрения за идеи
+									и инициативы. Признание лидеров по результатам каждого квартала.</p>
 								<img src="images/grid-card6.svg" alt="card img" width="189" height="190">
 							</div>
 						</div>
@@ -749,21 +760,9 @@
 											</defs>
 										</svg>
 										Добавить файл</label>
-									<input id="uploadFile" type="file" hidden>
+									<input id="uploadFile" multiple type="file" hidden>
 								</div>
 								<div class="upload-file-names">
-									<div class="file">
-										<span class="file-name">122.jpg</span>
-										<img src="images/cancel-file.svg" alt="cancel" width="10" height="10">
-									</div>
-									<div class="file">
-										<span class="file-name">122.jpg</span>
-										<img src="images/cancel-file.svg" alt="cancel" width="10" height="10">
-									</div>
-									<div class="file">
-										<span class="file-name">122.jpg</span>
-										<img src="images/cancel-file.svg" alt="cancel" width="10" height="10">
-									</div>
 								</div>
 							</div>
 							<div class="sure">
@@ -865,10 +864,12 @@
 		<script>
 			var swiper = new Swiper(".gridCards", {
 				slidesPerView: 3,
+				grap: true,
 				grid: {
 					rows: 2,
 					fill: 'row'
 				},
+
 			});
 			var vacanciSlide = new Swiper(".vacanciSlide", {
 				slidesPerView: 3.9,

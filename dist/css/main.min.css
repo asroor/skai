@@ -547,9 +547,12 @@ header {
   background-color: var(--white);
   padding: 35px 40px 35px 40px;
   width: 100%;
+  min-height: 334px;
   text-align: center;
   border-radius: 30px;
   box-shadow: 0px 4px 20.1px 0px #D2E1F6;
+  transition: ease-out 0.5s;
+  position: relative;
 }
 .gridCards .grid-card h3 {
   color: var(--Black, #1B181B);
@@ -559,8 +562,33 @@ header {
   letter-spacing: 0.36px;
   margin-bottom: 20px;
 }
+.gridCards .grid-card p {
+  display: none;
+  color: var(--light-gray);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.18px;
+}
 .gridCards .grid-card img {
   margin: 0 auto;
+  transition: ease-out 0.3s;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.gridCards .grid-card:hover {
+  background: linear-gradient(90deg, #BEDCFF 0%, #E5F5FF 100%);
+}
+.gridCards .grid-card:hover img {
+  height: 0;
+  width: 0;
+}
+.gridCards .grid-card:hover p {
+  display: block;
+  opacity: 1;
 }
 
 /* ==========================
@@ -874,8 +902,20 @@ header {
 .contact-left .series input:hover {
   border-color: var(--blue);
 }
+.contact-left .series input:hover::-moz-placeholder {
+  color: #1B181B;
+}
+.contact-left .series input:hover::placeholder {
+  color: #1B181B;
+}
 .contact-left .series input:focus {
   border: 4px solid #236BD7;
+}
+.contact-left .series input:focus::-moz-placeholder {
+  color: #1B181B;
+}
+.contact-left .series input:focus::placeholder {
+  color: #1B181B;
 }
 
 .upload {
@@ -885,6 +925,9 @@ header {
   column-gap: 27px;
 }
 
+.upload-file {
+  flex-shrink: 0;
+}
 .upload-file label {
   display: flex;
   align-items: center;
@@ -1135,5 +1178,14 @@ footer {
 }
 .footer-link__network a:active svg path {
   fill: var(--blue);
+}
+
+/*====================
+	responsive
+=====================*/
+@media (max-width: 1640px) {
+  .container {
+    width: 1240px;
+  }
 }
 /*# sourceMappingURL=main.min.css.map */

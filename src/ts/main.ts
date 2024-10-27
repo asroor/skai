@@ -58,3 +58,21 @@ uploadFile.addEventListener('change', () => {
 		})
 	}
 });
+const body = document.querySelector('body') as HTMLBodyElement;
+const bars = document.querySelector('.bars') as HTMLElement
+const sidebar = document.querySelector('.sidebar') as HTMLElement
+const closeBtn = document.querySelectorAll('.close-btn') as NodeListOf<HTMLElement>
+const closeBg = document.querySelector('.close-bg') as HTMLElement
+bars.addEventListener('click', () => {
+	sidebar.classList.add('open')
+	closeBg.classList.add('show')
+	body.classList.add('fixet')
+})
+
+closeBtn.forEach((btn) => {
+	btn.addEventListener('click', () => {
+		sidebar.classList.remove('open')
+		closeBg.classList.remove('show')
+		body.classList.remove('fixet')
+	})
+})

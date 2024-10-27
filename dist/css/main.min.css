@@ -359,6 +359,10 @@ body {
   overflow-x: hidden;
 }
 
+body.fixet {
+  overflow: hidden;
+}
+
 a,
 button {
   cursor: pointer;
@@ -430,7 +434,7 @@ header {
   top: 24px;
   left: auto;
   right: auto;
-  z-index: 2;
+  z-index: 3;
 }
 
 .bars {
@@ -488,6 +492,124 @@ header {
 }
 .nav-links__item a:active {
   color: var(--blue);
+}
+
+.sidebar {
+  position: fixed;
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  background: url("../images/sidebar.svg") no-repeat;
+  background-position: top left;
+  background-size: cover;
+  z-index: 5;
+  padding: 20px;
+  right: -450px;
+  opacity: 0;
+  top: 0;
+}
+
+.sidebar.open {
+  opacity: 1;
+  right: 0;
+}
+
+.close-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  opacity: 0;
+  z-index: -10;
+  transition: ease-out 0.3;
+  background: rgba(27, 24, 27, 0.208);
+}
+
+.close-bg.show {
+  z-index: 4;
+  opacity: 1;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.sidebar-btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-header {
+  border-radius: 13px;
+  background: var(--Gradient-White, linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.6) 100%));
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-header:hover {
+  background: white;
+}
+
+.sidebar-links {
+  padding: 0 17px;
+  margin-top: 80px;
+}
+.sidebar-links a {
+  display: block;
+  color: var(--black);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.33px;
+}
+.sidebar-links a:not(:last-child) {
+  margin-bottom: 50px;
+}
+.sidebar-links a:hover {
+  color: #4189F5;
+}
+.sidebar-links a:active {
+  color: var(--blue);
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 37px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+}
+.sidebar-footer a {
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.16px;
+}
+
+.sidebar-footer__network {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+}
+.sidebar-footer__network a {
+  display: block;
+}
+.sidebar-footer__network a:hover svg path {
+  fill: #4189F5;
+}
+.sidebar-footer__network a:active svg path {
+  fill: var(--blue);
 }
 
 /* ==========================
@@ -1101,7 +1223,7 @@ header {
 }
 .address-item .item-main h2 {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   color: var(--black);
   font-size: 32px;
   font-weight: 800;
@@ -1114,6 +1236,8 @@ header {
   font-weight: 700;
   line-height: 26px;
   letter-spacing: 0.36px;
+  position: relative;
+  z-index: 2;
 }
 
 .address-network {
@@ -1222,6 +1346,9 @@ footer {
   }
 }
 @media (max-width: 1300px) {
+  .bars {
+    display: block;
+  }
   .container,
   .grid-cards-container {
     width: 930px;
@@ -1290,9 +1417,6 @@ footer {
     padding: 0 190px;
     margin: 0 -10px;
   }
-  .vacanciSlide .swiper-slide {
-    padding: 10px;
-  }
   .vacanci-card {
     min-width: 310px;
   }
@@ -1343,6 +1467,9 @@ footer {
   }
 }
 @media (max-width: 790px) {
+  .home-right-btn {
+    display: flex;
+  }
   .container {
     width: 100%;
     padding: 0 20px;
@@ -1383,7 +1510,7 @@ footer {
   }
   .home-right .home-right__detal1 {
     width: 270px;
-    bottom: 220px;
+    bottom: 140px;
     left: 30px;
     transform: rotate(-7deg);
   }
@@ -1406,6 +1533,7 @@ footer {
   .vacanciSlide {
     padding: 0 20px;
     max-width: 100%;
+    margin: 0 auto;
   }
   .vacanci-tabs {
     display: none;
@@ -1415,6 +1543,11 @@ footer {
     display: block;
     min-height: 550px;
     padding: 0 20px;
+  }
+  .gridCards .swiper-slide {
+    padding: 0;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
   }
   .vacanci-container .vacanci-title {
     display: block;
@@ -1455,10 +1588,11 @@ footer {
   .grid-cards-container {
     position: relative;
     height: 506px;
+    width: 100%;
   }
   .grid-cards-container .gridCards {
-    position: absolute;
     overflow: visible;
+    padding: 0 20px;
   }
   .gridCards .grid-card h3 {
     font-size: 22px;
@@ -1472,11 +1606,15 @@ footer {
     position: static;
     transform: translate(0);
   }
+  .level-series {
+    align-items: flex-start;
+  }
+  .level-series__about h3 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
   .gridCards {
     width: 100%;
-  }
-  .gridCards .swiper-slide {
-    min-width: 360px !important;
   }
   .gridCards .grid-card {
     width: 330px;
@@ -1494,6 +1632,211 @@ footer {
   .gridCards .grid-card:hover img {
     width: 192px;
     height: auto;
+  }
+  .title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 45px;
+  }
+  .btn span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .home-right {
+    min-width: 728px;
+  }
+  .vacanci-card .opt {
+    font-size: 14px;
+  }
+  .footer-wrap {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .vacanci-card h1 {
+    font-size: 28px;
+    font-weight: 800;
+  }
+  .home-about h1 {
+    font-size: 38px;
+  }
+  .home-wrapper {
+    margin-top: 110px;
+  }
+  .home-about h4 {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .footer-links a {
+    line-height: 1;
+  }
+  .vacanci-card h3 {
+    font-size: 16px;
+  }
+  .contact-btn {
+    padding: 12px 24px;
+  }
+  .contact-wrapper {
+    padding: 28px 20px;
+  }
+}
+@media (max-width: 750px) {
+  .vacanciSlide .swiper-slide {
+    padding: 0;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  .vacanci-card {
+    min-width: auto;
+    width: 310px;
+  }
+}
+@media (max-width: 650px) {
+  .values-card .card-num h1 {
+    font-size: 22px;
+  }
+  .values-card .card-num {
+    width: 44px;
+    height: 44px;
+  }
+  .values-card {
+    min-height: auto;
+  }
+  .values-card .values-flex {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
+    margin-bottom: 12px;
+  }
+  .values-card .card-num {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .values-wrapper .row {
+    row-gap: 16px;
+  }
+  .values-card h2 {
+    margin: 0;
+    text-align: left;
+  }
+  .values-wrapper .row .col {
+    max-width: 100%;
+    padding: 0;
+  }
+  .values-card h3 {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.2;
+  }
+  .footer-links {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .address-item .item-main h1 {
+    bottom: -10px;
+  }
+  .address-item {
+    padding: 40px 0;
+  }
+}
+@media (max-width: 700px) {
+  .home-right {
+    min-width: 660px;
+  }
+  .home-right .home-right__detal1 {
+    width: 200px;
+    bottom: 140px;
+    left: 60px;
+  }
+  .home-right .home-right__detal2 {
+    width: 140px;
+  }
+}
+@media (max-width: 550px) {
+  #level {
+    padding-top: 150px;
+  }
+  .contact-wrapper {
+    padding: 28px 20px;
+  }
+  .home-right {
+    min-width: 510px;
+    min-height: 636px;
+  }
+  .home-right .home-right__detal2 {
+    width: 111px;
+    top: 140px;
+    right: 50px;
+  }
+  .home-right .home-right__detal1 {
+    width: 121px;
+    bottom: 120px;
+    left: 80px;
+  }
+  .contact-wrapper .title {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  .contact-left .series label {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .contact-left .series input {
+    height: 45px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 430px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .home-right {
+    margin-top: -50px;
+    min-width: 409.799px;
+    min-height: 511.429px;
+  }
+  .home-right .home-right__detal2 {
+    top: 100px;
+    right: 30px;
+  }
+  .home-right .home-right__detal1 {
+    bottom: 90px;
+    left: 40px;
+  }
+}
+@media (max-width: 400px) {
+  .sidebar-links {
+    margin-top: 40px;
+  }
+  .sidebar-links a:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 370px) {
+  .home-wrapper {
+    margin-top: 70px;
+  }
+  .gridCards .grid-card,
+  .vacanci-card {
+    width: 100%;
+  }
+  .gridCards .swiper-slide,
+  .vacanciSlide .swiper-slide {
+    width: inherit !important;
+  }
+}
+@media (max-width: 360px) {
+  .vacanci-container {
+    min-height: auto;
+    margin-bottom: 54px;
+  }
+  .vacanciSlide {
+    padding: 0;
+    position: static;
+    transform: translate(0);
   }
 }
 /*# sourceMappingURL=main.min.css.map */

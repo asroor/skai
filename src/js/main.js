@@ -48,3 +48,20 @@ uploadFile.addEventListener('change', () => {
         });
     }
 });
+const body = document.querySelector('body');
+const bars = document.querySelector('.bars');
+const sidebar = document.querySelector('.sidebar');
+const closeBtn = document.querySelectorAll('.close-btn');
+const closeBg = document.querySelector('.close-bg');
+bars.addEventListener('click', () => {
+    sidebar.classList.add('open');
+    closeBg.classList.add('show');
+    body.classList.add('fixet');
+});
+closeBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        closeBg.classList.remove('show');
+        body.classList.remove('fixet');
+    });
+});

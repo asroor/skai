@@ -18,7 +18,6 @@ Primary user: smmstay
 /* ==================================
 	Font
 /* =================================*/
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 @import 'fonts';
 /* ==================================
 	Common styles
@@ -69,9 +68,11 @@ body {
 	background-color: rgba(255, 255, 255, 1);
 	overflow-x: hidden;
 }
+
 body.fixet {
 	overflow: hidden;
 }
+
 a,
 button {
 	cursor: pointer;
@@ -549,7 +550,8 @@ header {
 ===================*/
 
 #level {
-	padding-top: 382px;
+	padding-top: calc(382px / 3);
+	margin-top: calc(382px / 2);
 }
 
 .level-wrapper {
@@ -1608,10 +1610,12 @@ footer {
 	.values-card .card-num h1 {
 		font-size: 22px;
 	}
+
 	.values-card .card-num {
 		width: 44px;
 		height: 44px;
 	}
+
 	.values-card {
 		min-height: auto;
 
@@ -1680,7 +1684,8 @@ footer {
 
 @media (max-width:550px) {
 	#level {
-		padding-top: 150px;
+		padding-top: 100px;
+		margin-top: 50px;
 	}
 
 	.contact-wrapper {
@@ -1727,27 +1732,29 @@ footer {
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	
+
 	.home-right {
 		margin-top: -50px;
 		min-width: 409.799px;
 		min-height: 511.429px;
-		
+
 		.home-right__detal2 {
 			top: 100px;
 			right: 30px;
 		}
-		
+
 		.home-right__detal1 {
 			bottom: 90px;
 			left: 40px;
 		}
 	}
 }
+
 @media (max-width:400px) {
 	.sidebar-links {
 		margin-top: 40px;
 	}
+
 	.sidebar-links a:not(:last-child) {
 		margin-bottom: 20px;
 	}
